@@ -7,7 +7,7 @@ app.get("/", function(req, res){
 })
 app.get("/resume", function(req, res){
     file=__dirname+"/resume.html";
-    res.send(file);
+    res.sendFile(file);
 })
 app.get("/game", function(req, res){
     res.send("Welcome to Haritha's Game Page");
