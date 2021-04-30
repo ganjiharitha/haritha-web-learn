@@ -1,7 +1,9 @@
 const express = require('express');
  
 const app = express();
- 
+app.use(express.static(__dirname+"/allhtmlfiles"));
+app.use(express.static(__dirname+"/allcssfiles"));
+app.use(express.static(__dirname+"/alljsfile"));
 app.get("/", function(req, res){
     res.send("Welcome to Ganji Haritha's Basic Site");
 })
