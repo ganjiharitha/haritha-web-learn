@@ -6,7 +6,8 @@ app.get("/", function(req, res){
     res.send("Welcome to Ganji Haritha's Basic Site");
 })
 app.get("/resume", function(req, res){
-    res.send("Welcome to Haritha's Resume Page");
+    let file=__dirname+"/resume.html";
+    res.send(file);
 })
 app.get("/game", function(req, res){
     res.send("Welcome to Haritha's Game Page");
