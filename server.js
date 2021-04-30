@@ -6,7 +6,7 @@ app.get("/", function(req, res){
     res.send("Welcome to Ganji Haritha's Basic Site");
 })
 app.get("/resume", function(req, res){
-    file=__dirname+"/resume.html";
+    file=__dirname+"/allhtmlfiles/resume.html";
     res.sendFile(file);
 })
 app.get("/game", function(req, res){
