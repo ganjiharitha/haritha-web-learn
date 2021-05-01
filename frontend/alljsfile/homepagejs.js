@@ -1,4 +1,4 @@
 function resumefunction() {
-    file=__dirname+"/frontend/allhtmlfiles/resume.html";
+    file=__dirname+"/allhtmlfiles/resume.html";
     res.sendFile(file);
    }
