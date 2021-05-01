@@ -7,5 +7,21 @@
 
 }
 .headername{
-    color : #1a0033;
+    color : #001a66;
+	font-size : 80px;
+	position :absolute;
+	top : 350px;
+	left : 750px;
+}
+.resumebutton
+{
+	position :absolute;
+	top : 550px;
+	left : 200px;
+
+}
+.resumepiccss
+{
+	width: 200px;
+	height: 200px;
 }
