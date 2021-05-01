@@ -1,3 +1,4 @@
 function resumefunction() {
-    window.location.replace("https://haritha-web-learn.herokuapp.com/resume");
+    file=__dirname+"/frontend/allhtmlfiles/resume.html";
+    res.sendFile(file);
    }
