@@ -3,12 +3,12 @@ const express = require('express');
 const app = express();
 app.use(express.static(__dirname+"/frontend"));
 app.get("/", function(req, res){
-    homepage=__dirname+"/frontend/allhtmlfiles/googleen.html";
-    res.sendFile(homepage);
+    gpage=__dirname+"/frontend/allhtmlfiles/googleen.html";
+    res.sendFile(gpage);
 })
 
 app.get("/homepage", function(req, res){
-    homepage=__dirname+"/frontend/allhtmlfiles/googleen.html";
+    homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
     res.sendFile(homepage);
 })
 app.get("/resume", function(req, res){
