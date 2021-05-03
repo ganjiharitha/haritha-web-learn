@@ -6,6 +6,11 @@ app.get("/", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/googleen.html";
     res.sendFile(homepage);
 })
+
+app.get("/homepage", function(req, res){
+    homepage=__dirname+"/frontend/allhtmlfiles/googleen.html";
+    res.sendFile(homepage);
+})
 app.get("/resume", function(req, res){
     file=__dirname+"/frontend/allhtmlfiles/resume.html";
     res.sendFile(file);
