@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 app.use(express.static(__dirname+"/frontend"));
 app.get("/", function(req, res){
-    homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
+    homepage=__dirname+"/frontend/allhtmlfiles/googleen.html";
     res.sendFile(homepage);
 })
 app.get("/resume", function(req, res){
