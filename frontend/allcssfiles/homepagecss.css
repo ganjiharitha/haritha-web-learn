@@ -15,13 +15,29 @@
 }
 .resumebutton
 {
+    cursor  : pointer;
 	position :absolute;
 	top : 550px;
-	left : 200px;
+	left : 600px;
+	border :  none;
+
+}
+.applebutton
+{
+    cursor : pointer;
+	position :absolute;
+	top : 550px;
+	left : 900px;
+	border : none;
 
 }
 .resumepiccss
 {
+	width: 200px;
+	height: 200px;
+}
+.applepic{
+
 	width: 200px;
 	height: 200px;
 }
@@ -32,8 +48,8 @@
 }
 .homeback
 {
+    cursor : pointer;
 	position :absolute;
 	top : 0px;
-	left : 00px;
-
+	left : 0px;
 }

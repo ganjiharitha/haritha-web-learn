@@ -1,0 +1,50 @@
+body{
+    background-color : black;
+    position : absolute;
+    width : auto;
+    margin-top : 0px;
+
+}
+.topnav {
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  position : fixed;
+  width : 100%;
+  height : 40px;
+   z-index: 1;
+}
+
+.topnav a {
+  float: left;
+  color:  #cccccc;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+  font-size: 13px;
+  font-family : Arial;
+
+
+}
+
+.topnav a:hover {
+  background-color: none;
+  cursor : pointer;
+  color :  #ffffff;
+
+}
+.para{
+    font-size : 50px;
+    color : red;
+    position : relative;
+    left : 100px;
+    margin-top: 30px;
+}
+.topnav a.aligntoleft{
+    margin-left : 500px;
+}
+.ipadpropic{
+    position : absolute;
+    left : 350px;
+    top : 100px;
+}
+
