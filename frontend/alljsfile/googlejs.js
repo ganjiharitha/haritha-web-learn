@@ -10,3 +10,7 @@ function homepagere(){
 function googlesear(){
 	window.open("https://www.google.co.in/","_black");
 }
+function googlelucky()
+{
+    windows.open("https://www.google.com/doodles","_blank");
+}
