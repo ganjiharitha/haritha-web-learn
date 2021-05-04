@@ -12,5 +12,5 @@ function googlesear(){
 }
 function googlelucky()
 {
-    windows.open("https://www.google.com/doodles","_blank");
+    window.open("https://www.google.com/doodles","_blank");
 }
