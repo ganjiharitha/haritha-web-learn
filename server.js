@@ -6,6 +6,10 @@ app.get("/", function(req, res){
     gpage=__dirname+"/frontend/allhtmlfiles/googleen.html";
     res.sendFile(gpage);
 })
+app.get("/google", function(req, res){
+    gpage=__dirname+"/frontend/allhtmlfiles/googleen.html";
+    res.sendFile(gpage);
+})
 
 app.get("/homepage", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/homep.html";

@@ -7,3 +7,6 @@ function homepagere(){
 	else
 		alert("enter valid search");
 }
+function googlesear(){
+	window.open("https://www.google.co.in/","_black");
+}
