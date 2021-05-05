@@ -2,6 +2,20 @@
     position : absolute;
     width : auto;
 }
+.homebackpic
+{
+	width: 50px;
+	height: 50px;
+}
+.homeback
+{
+    cursor : pointer;
+	position :absolute;
+	top : 0px;
+	left : 0px;
+}
+.homeback{
+}
 .headertext{
     text-align : center;
     color : #001a66;

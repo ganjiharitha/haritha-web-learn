@@ -18,7 +18,7 @@
     cursor  : pointer;
 	position :absolute;
 	top : 550px;
-	left : 600px;
+	left : 500px;
 	border :  none;
 
 }
@@ -27,7 +27,7 @@
     cursor : pointer;
 	position :absolute;
 	top : 550px;
-	left : 900px;
+	left : 850px;
 	border : none;
 
 }
@@ -52,4 +52,18 @@
 	position :absolute;
 	top : 0px;
 	left : 0px;
+}
+.rgbpic{
+
+	width: 200px;
+	height: 200px;
+}
+.rgbbutton
+{
+    cursor : pointer;
+	position :absolute;
+	top : 550px;
+	right : 500px;
+	border : none;
+
 }

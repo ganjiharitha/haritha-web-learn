@@ -8,3 +8,6 @@ function resumefunction() {
 function applefunction() {
     window.location.replace("https://haritha-web-learn.herokuapp.com/apple");
    }
+   function rgbfunction() {
+    window.location.replace("https://haritha-web-learn.herokuapp.com/rgb");
+   }
