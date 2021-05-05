@@ -23,6 +23,10 @@ app.get("/apple", function(req, res){
     applel=__dirname+"/frontend/allhtmlfiles/apple.html";
     res.sendFile(applel);
 })
+app.get("/rgb", function(req, res){
+    rgbpage=__dirname+"/frontend/allhtmlfiles/rgb.html";
+    res.sendFile(rgbpage);
+})
 
 app.get("/game", function(req, res){
     res.send("Welcome to Haritha's Game Page");

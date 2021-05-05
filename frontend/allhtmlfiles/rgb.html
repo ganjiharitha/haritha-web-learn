@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Haritha's applepage</title>
+    <link rel="stylesheet" href="/allcssfiles/rgbcss.css">
+    <script src="/alljsfile/rgbjs.js"></script>
+</head>
+<body>
+<h1 class="headertext"> RGB Color Slider</h1>
+<div class="totalpage">
+    <div class="displeyer">
+        <div class="printer" id="printerback">
+            <p  class="rgbtestres" id="rgbtestresult">RGB(255,255,255)</p>
+        </div>
+    </div>
+    <div class="changer">
+        <div class="redchange">
+            <p>RED</p>
+            <input type="range" id="redslide" value="255" min="0" max="255" onchange="changergb()" oninput="changergb()">
+            <div id="valred" class="valredcs">255</div>
+         </div>
+        <div class="greenchange">
+            <p>GREEN</p>
+            <input type="range" id="greenslide" value="255" min="0" max="255" onchange="changergb()" oninput="changergb()">
+             <div id="valgreen" class="valgreencs">255</div>
+        </div>
+        <div class="bluechange">
+            <p>BLUE</p>
+            <input type="range" id="blueslide" value="255" min="0" max="255" onchange="changergb()" oninput="changergb()">
+             <div id="valblue" class="valbluecs">255</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
