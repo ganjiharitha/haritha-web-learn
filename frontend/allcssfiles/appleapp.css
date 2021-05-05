@@ -32,15 +32,36 @@ body{
   color :  #ffffff;
 
 }
-.para{
-    font-size : 50px;
-    color : red;
-    position : relative;
-    left : 100px;
-    margin-top: 30px;
-}
 .topnav a.aligntoleft{
     margin-left : 500px;
+}
+.secondnav{
+    background-color : #ebebe0;
+   overflow: hidden;
+    width : 100%;
+     height : 40px;
+  position : fixed;
+  top : 40px;
+
+
+}
+.secondnav a {
+    float: left;
+    text-align : center ;
+    font-size: 13px;
+    font-family : Arial;
+    padding: 14px 10px;
+    text-decoration: none;
+}
+.secondnav p{
+    float: left;
+    text-align : center ;
+    font-size: 13px;
+    font-family : Arial;
+    text-decoration: none;
+}
+.secondnav a.alignl{
+     margin-left : 700px;
 }
 .ipadpropic{
     position : absolute;
