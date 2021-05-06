@@ -1,0 +1,82 @@
+
+.wholepage{
+    background-image : url("/allpics/loginback.jpg");
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position : center;
+    width : 100%;
+    height : 100%;
+    position : fixed;
+}
+.loginbox{
+    background-color : white;
+    width: 400px;
+    height : 500px;
+    margin-left : 750px;
+    margin-top : 200px;
+     border-radius: 25px;
+  border: 2px ;
+}
+.loghead{
+    padding : 40px 150px;
+    font-family : Arial;
+    height : 40px;
+    width : 100%;
+}
+.inputsec{
+    width : 100%;
+    hight : 100px;
+}
+.titlecl{
+    font-size : 20px;
+    padding-left :20px;
+}
+.usern{
+    width: 100%;
+  padding: 10px;
+  outline: none;
+
+}
+.userdiv{
+ display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.uicon{
+padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+.fpass{
+    width : 100%;
+    height : 10px;
+}
+.fpassa{
+    float: right;
+    text-decoration : none;
+    cursor : pointer;
+    color : black;
+}
+.submit{
+    background-color : dodgerblue;
+    width : 200px;
+    height: 35px;
+    cursor : pointer;
+    font-size : 20px;
+    border : none;
+    color : white;
+    margin-left : 90px;
+}
+.ormar{
+     margin-left : 180px;
+}
+.rega{
+
+    text-decoration : none;
+    cursor : pointer;
+    color : dodgerblue;
+    margin-left : 150px;
+    font-size : 25px;
+}
