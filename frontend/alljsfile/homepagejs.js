@@ -9,3 +9,6 @@ function applefunction() {
    function rgbfunction() {
     window.location.href ="https://haritha-web-learn.herokuapp.com/rgb";
    }
+ function todofunction() {
+    window.location.href ="https://haritha-web-learn.herokuapp.com/todo";
+   }
