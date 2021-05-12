@@ -9,6 +9,7 @@
     <script src="/alljsfile/rgbjs.js"></script>
 </head>
 <body>
+<div class="wholepage">
 <button class="homeback"  onClick="homefun()">
 		<img class="homebackpic" src="/allpics/goback.png" />
 </button>
@@ -21,22 +22,22 @@
     </div>
     <div class="changer">
         <div class="redchange">
-            <p>RED</p>
+            <p class="colorw">RED</p>
             <input type="range" id="redslide" value="255" min="0" max="255" onchange="changergb()" oninput="changergb()">
             <div id="valred" class="valredcs">255</div>
          </div>
         <div class="greenchange">
-            <p>GREEN</p>
+            <p class="colorw">GREEN</p>
             <input type="range" id="greenslide" value="255" min="0" max="255" onchange="changergb()" oninput="changergb()">
              <div id="valgreen" class="valgreencs">255</div>
         </div>
         <div class="bluechange">
-            <p>BLUE</p>
+            <p class="colorw">BLUE</p>
             <input type="range" id="blueslide" value="255" min="0" max="255" onchange="changergb()" oninput="changergb()">
              <div id="valblue" class="valbluecs">255</div>
         </div>
     </div>
 </div>
-
+</div>
 </body>
 </html>

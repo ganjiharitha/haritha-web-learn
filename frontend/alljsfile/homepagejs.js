@@ -1,13 +1,14 @@
 function resumefunction() {
     console.log("resumeloading");
-    window.location.replace("https://haritha-web-learn.herokuapp.com/resume");
+  //  window.location.replace("https://haritha-web-learn.herokuapp.com/resume");
+window.location.href = "https://haritha-web-learn.herokuapp.com/resume";
    }
  function homefun() {
-     window.location.replace("https://haritha-web-learn.herokuapp.com/");
+    window.location.href ="https://haritha-web-learn.herokuapp.com/";
      }
 function applefunction() {
-    window.location.replace("https://haritha-web-learn.herokuapp.com/apple");
+   window.location.href ="https://haritha-web-learn.herokuapp.com/apple";
    }
    function rgbfunction() {
-    window.location.replace("https://haritha-web-learn.herokuapp.com/rgb");
+    window.location.href ="https://haritha-web-learn.herokuapp.com/rgb";
    }

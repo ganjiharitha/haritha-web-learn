@@ -1,6 +1,11 @@
-.body{
-    position : absolute;
-    width : auto;
+.wholepage{
+    background-image : url("/allpics/rgbcack.png");
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position : center;
+    width : 100%;
+    height : 100%;
+    position : fixed;
 }
 .homebackpic
 {
@@ -14,8 +19,6 @@
 	top : 0px;
 	left : 0px;
 }
-.homeback{
-}
 .headertext{
     text-align : center;
     color : #001a66;
@@ -28,11 +31,11 @@
      background : none;
   }
 
-.totalpage .displeyer{
+.displeyer{
 
     height : 400px;
 }
-.totalpage .displeyer .printer{
+.printer{
     position : absolute;
     left : 450px;
     width : 1000px;
@@ -41,7 +44,7 @@
     border-style: ridge;
 }
 
-.totalpage .displeyer .printer .rgbtestres
+.rgbtestres
 {
     font-size : 100px;
     font-family : Arial;
@@ -49,7 +52,7 @@
     color : rgb(255,255,255);
      background : none;
 }
-.totalpage .changer{
+.changer{
     position : absolute;
     top : 500px;
     left : 500px;
@@ -57,30 +60,36 @@
     margin-top : 100px;
      background : none;
 }
-.totalpage .changer .redchange{
+.redchange{
     float : left;
     padding: 14px 80px;
 }
-.totalpage .changer .redchange .valredcs{
+.valredcs{
     margin-top : 20px;
     font-size : 20px;
     font-family : Arial;
+    color : white;
 }
-.totalpage .changer .greenchange{
+ .greenchange{
     float : left;
     padding: 14px 80px;
 }
-.totalpage .changer .greenchange .valgreencs{
+.valgreencs{
     margin-top : 20px;
     font-size : 20px;
     font-family : Arial;
+    color : white;
 }
-.totalpage .changer .bluechange{
+ .bluechange{
     float : left;
     padding: 14px 80px;
 }
-.totalpage .changer .bluechange .valbluecs{
+.valbluecs{
     margin-top : 20px;
     font-size : 20px;
     font-family : Arial;
+    color : white;
+}
+.colorw{
+    color : white;
 }

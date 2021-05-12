@@ -1,9 +1,9 @@
 function homepagere(){
 	var x = document.getElementById("mysearch").value;
 	if(x=="https://haritha-web-learn.herokuapp.com/")
-		window.location.replace("https://haritha-web-learn.herokuapp.com/homepage");
+		window.location.href ="https://haritha-web-learn.herokuapp.com/homepage";
 	else if(x=="haritha-web-learn")
-		window.location.replace("https://haritha-web-learn.herokuapp.com/homepage");
+		window.location.href ="https://haritha-web-learn.herokuapp.com/homepage";
 	else
 		alert("enter valid search");
 }
