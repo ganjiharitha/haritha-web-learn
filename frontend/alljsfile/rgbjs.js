@@ -13,6 +13,3 @@ function changergb()
     else
         document.getElementById("rgbtestresult").style.color= "white";
 }
- function homefun() {
-   window.location.href ="https://haritha-web-learn.herokuapp.com/homepage";
-     }
