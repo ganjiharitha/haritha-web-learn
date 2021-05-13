@@ -1,54 +1,55 @@
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
+
+var elements=[];
+window.onload=function(){
+    if(JSON.parse(localStorage.getItem("todo-elements"))!=null)
+    elements=JSON.parse(localStorage.getItem("todo-elements"));
+    display();
 }
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
+function textinp()
+{
+    var input = document.getElementById("addtxt");
+    input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("subut").click();
+    }});
 }
-
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
+function subdata()
+{
+     var input = document.getElementById("addtxt").value;
+    if(input){
+        elements.push(input);
+        localStorage.setItem("todo-elements",JSON.stringify(elements));
+        display();
     }
-  }
+}
+function display(){
+    document.querySelector(".itemsoflist").innerHTML="";
+    for(var i = 0; i<elements.length;i++)
+    {
+        document.querySelector(".itemsoflist").innerHTML+="<button class=donebutt onclick=done("+i+")>Done</button>"
+        +elements[i]+"<button class=undooit onclick=undoo("+i+")>Not Done</button>"
+        +"<button class=delburr onclick=deleteit("+i+")>delete</button>"+"<br>";
+        document.getElementById("addtxt").value="";
+    }
+
+}
+function deleteit(index){
+    elements.splice(index,1);
+    localStorage.setItem("todo-elements",JSON.stringify(elements));
+    display();
+}
+function done(index){
+   elements[index]= "<strike>"+elements[index]+"</strike>";
+    localStorage.setItem("todo-elements",JSON.stringify(elements));
+   display();
+}
+function undoo(index){
+
+    if(elements[index].includes("<strike>")){
+    elements[index]=elements[index].replace("<strike>","");
+    elements[index]=elements[index].replace("</strike>","");
+    }
+    localStorage.setItem("todo-elements",JSON.stringify(elements));
+    display();
 }
