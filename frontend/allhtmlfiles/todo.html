@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="/allcssfiles/todocs.css">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="/alljsfile/todojs.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <div class="headsec">
-        <h1 class="todon">todos</h1>
-        <input type="text" id="myinput" placeholder="Enter what to bo done..." class="typebox" onchange="textinp()">
-        <button class="subut" id="subut" name="subut" onclick="sdata()"></button>
-    </div>
-    <div class="itemsoflist">
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
 
-    </div>
+<ul id="myUL">
+</ul>
+
 </body>
 </html>
