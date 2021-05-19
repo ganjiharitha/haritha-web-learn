@@ -64,15 +64,16 @@ app.delete('/crud/del/:id', function(req, res){
 
 app.put('/crud/put/:id', function(req, res){
     var i=req.params.id
-
     table.findById(i, function (err,Obj) {
         if(err){
             console.log('Error:' + err);
         }
         else{
-            table.findByIdAndUpdate(i, {articles: req.body.articles }, function(){})
+            table.findByIdAndUpdate(i, {articles: req.body.articles}, function(){})
         };
     });
+
+req.body.Articles = parseInt( req.body.Articles );
 
 
 })

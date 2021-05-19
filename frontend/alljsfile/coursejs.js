@@ -65,24 +65,37 @@ $(document).ready(function() {
         var value = $(this).html()
 
         $(this).unbind()
-        $(this).html(`<input class="result form-control" data-testid="${testid}" type="text" value="${value}">`)
-
+        $(this).html(`<input id ="${testid}" class="result form-control" data-testid="${testid}" type="text" value="${value}">`)
         $(`.result`).on('keyup', function () {
-            var testid = $(this).data('testid')
-            var saveBtn = $(`#save-${testid}`)
-            saveBtn.prop('disabled', false)
-
+                var testid = $(this).data('testid')
+                var saveBtn = $(`#save-${testid}`)
+                saveBtn.prop('disabled', false)
         })
+
 
     }
 
     function saveUpdate() {
-        console.log('Saved!')
         var testid = $(this).data('testid')
-        var saveBtn = $(`#save-${testid}`)
+        var resdata= $(`#result-${testid}`)
+        var d= $('#resdata').val();
+        console.log(d);
+
+        $.ajax({
+        url: '/crud/put/'+testid,
+        type: 'PUT',
+        method : 'PUT',
+         data: data,
+        success: function (data) {
+
+            },
+            error: function (xhr, status, error) {
+
+            }
+    });
+
+            var saveBtn = $(`#save-${testid}`)
         var row = $(`.test-row-${testid}`)
-
-
 
         saveBtn.prop('disabled', true)
         row.css('opacity', "0.5")
@@ -90,14 +103,6 @@ $(document).ready(function() {
         setTimeout(function () {
             row.css('opacity', '1')
         }, 2000)
-
-        $.ajax({
-        url: '/crud/put/'+testid,
-        type: 'PUT',
-        method : 'PUT',
-        dataType: 'json'
-
-    });
     }
 
     function deleteTest() {
