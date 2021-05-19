@@ -1,24 +1,14 @@
 const express = require('express');
 const app = express();
 
-const lib = require('./backend/lib/courselib');
 const table = require("./backend/models/coursemodel");
 app.use(express.static(__dirname+"/frontend"));
-
+require("./connectionmongo");
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 const mongoose = require('mongoose');
-//var password=process.env.Mongo_atlas_password;
-var connectionString="mongodb+srv://haritha:Gharitha@cluster0.c6dlh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-
-mongoose.connect(connectionString,{useNewUrlParser: true,useUnifiedTopology: true});
-
-mongoose.connection.on('connected',function()
-{
-    console.log("Database connected");
-});
 
 
 app.get("/", function(req, res){
