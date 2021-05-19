@@ -56,12 +56,12 @@ $(document).ready(function() {
         $(`#save-${obj._id}`).on('click', saveUpdate);
 
 
-        $(`#result-${obj.id}`).on('click', editResult)
+        $(`#result-${obj._id}`).on('click', editResult)
 
     }
 
     function editResult() {
-        var testid = $(this).data('testid')
+     var testid = $(this).data('testid')
         var value = $(this).html()
 
         $(this).unbind()
@@ -82,6 +82,8 @@ $(document).ready(function() {
         var saveBtn = $(`#save-${testid}`)
         var row = $(`.test-row-${testid}`)
 
+
+
         saveBtn.prop('disabled', true)
         row.css('opacity', "0.5")
 
@@ -89,7 +91,13 @@ $(document).ready(function() {
             row.css('opacity', '1')
         }, 2000)
 
+        $.ajax({
+        url: '/crud/put/'+testid,
+        type: 'PUT',
+        method : 'PUT',
+        dataType: 'json'
 
+    });
     }
 
     function deleteTest() {
