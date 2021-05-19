@@ -1,13 +1,26 @@
 const express = require('express');
-
 const app = express();
+
 const lib = require('./backend/lib/courselib');
-const model = require("./backend/models/coursemodel");
+const table = require("./backend/models/coursemodel");
 app.use(express.static(__dirname+"/frontend"));
+
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-var connection=require("./connectionmongo");
+
+const mongoose = require('mongoose');
+var password=process.env.Mongo_atlas_password;
+var connectionString="mongodb+srv://haritha:"+password+"@cluster0.c6dlh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+mongoose.connect(connectionString,{useNewUrlParser: true,useUnifiedTopology: true});
+
+mongoose.connection.on('connected',function()
+{
+    console.log("Database connected");
+});
+
+
 app.get("/", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
     res.sendFile(homepage);
@@ -16,20 +29,64 @@ app.get("/google", function(req, res){
     gpage=__dirname+"/frontend/allhtmlfiles/googleen.html";
     res.sendFile(gpage);
 })
+
+
+
 app.get("/crud", function(req, res){
     gpage=__dirname+"/frontend/allhtmlfiles/coursebackend.html";
     res.sendFile(gpage);
 })
+app.get('/crud/get',function(req, res){
+     table.find()
+    .then((result) =>{
+        res.send(result);
+        console.log(result);
+    })
+    .catch((err) => {
+        console.log(err);
+    })
 
-
-
-
-app.get('/api/course',function(req, res){
-    lib.getall(req,res);
+  //  lib.getall(req,res);
 })
-app.post('/api/course',function(req,res){
-     lib.create(req,res);
+app.post('/crud/post',function(req,res){
+     var newUser= req.body;
+    const newTable = new table({
+        names : newUser.names,
+        articles : newUser.articles,
+        id : newUser.id
+    })
+    console.log(newTable);
+    newTable.save();
+
+     //lib.create(req,res);
 })
+app.delete('/crud/del/:id', function(req, res){
+    var i=req.params.id
+    table.findByIdAndDelete(i, (err)=>{
+        if(err){
+            console.log('Error:'+err);
+        }
+        else{
+            console.log('Success');
+        }
+    })
+})
+
+app.put('/crud/put/:id', function(req, res){
+    var i=req.params.id
+    table.findById(i, function (err,Obj) {
+        if(err){
+            console.log('Error:' + err);
+        }
+        else{
+            table.findByIdAndUpdate(i, {articles: value}, function(){})
+        };
+    });
+
+
+})
+
+
 
 app.get("/homepage", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/homep.html";

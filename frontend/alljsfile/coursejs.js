@@ -1,7 +1,9 @@
 $(document).ready(function() {
-    var newId = uniqId();
-    var newTest = { 'course' : "", "id" : newId, 'articles' : "" };
-    $.get("/api/course",function(data,status){
+    var newId = 1;
+    var newTest = { 'names' : "", "id" : newId, 'articles' : ""};
+
+
+    $.get("/crud/get",function(data,status){
     var tests=data;
     for (var i in tests) {
         addRow(tests[i]);
@@ -12,50 +14,46 @@ $(document).ready(function() {
         $(".addingdiv").css("height","auto");
     });
     $("#subbtn").click(function(){
-        newTest.course= $('#selector').val();
+        newTest.names= $('#selector').val();
+        newTest.id=newId++;
         newTest.articles = $('#articul').val();
-        newTest.id=uniqId();
-        if(newTest.course=="")
+
+        if(newTest.names=="")
         alert("no test selected");
          else if(newTest.articles=="")
         alert("no articules are selected");
         else
         {
-           /* $.post("/api/course",
-                {
-                course : newTest.course,
-                id : newTest.id,
-                articles : newTest.articles
-                },
-                function(data,status){
-                console.log("data submitted");
-            });*/
             addRow(newTest);
             $(".selectdiv").css("visibility","hidden");
             $(".addingdiv").css("height","50px");
-            $('#selector').val('');
+
+           $.post("/crud/post",
+                {
+                names : newTest.names,
+                articles : newTest.articles,
+                id : newTest.id
+                })
+             $('#selector').val('');
             $('#articul').val('');
         }
     });
 });
-function uniqId() {
-  return Math.round(new Date().getTime() + (Math.random() * 100));
-}
     function addRow(obj) {
 
-        var row = `<tr scope="row" class="test-row-${obj.id}">
-                       <td>${obj.course}</td>
-                       <td id="result-${obj.id}" data-testid="${obj.id}"">${obj.articles}</td>
+        var row = `<tr scope="row" class="test-row-${obj._id}">
+                       <td>${obj.names}</td>
+                       <td id="result-${obj._id}" data-testid="${obj._id}"">${obj.articles}</td>
                        <td>
-                         <button data-testid="${obj.id}" id="delete-${obj.id}">Delete</button>
-                         <button data-testid="${obj.id}"  id="save-${obj.id}">Save</button>
+                         <button data-testid="${obj._id}" id="delete-${obj._id}">Delete</button>
+                         <button data-testid="${obj._id}"  id="save-${obj._id}">Save</button>
 
                        </td>
                    </tr>`
         $('#tests-table').append(row)
 
-        $(`#delete-${obj.id}`).on('click', deleteTest);
-        $(`#save-${obj.id}`).on('click', saveUpdate);
+        $(`#delete-${obj._id}`).on('click', deleteTest);
+        $(`#save-${obj._id}`).on('click', saveUpdate);
 
 
         $(`#result-${obj.id}`).on('click', editResult)
@@ -98,8 +96,12 @@ function uniqId() {
         var testid = $(this).data('testid');
         var row = $(`.test-row-${testid}`)
         row.remove();
-
-        var deleteBtn = $(`#delete-${testid}`)
-        var saveBtn = $(`#save-${testid}`)
-
+        console.log(testid)
+        console.log(row)
+        $.ajax({
+        url: '/crud/del/'+testid,
+        type: 'DELETE',
+        method : 'DELETE',
+        dataType: 'json'
+    });
     }

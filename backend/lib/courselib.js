@@ -1,4 +1,4 @@
-const model = require("../models/coursemodel");
+/*const model = require("../models/coursemodel");
 module.exports.create = function(req,res){
     var a=new model({
         course : req.body.course,
@@ -25,7 +25,6 @@ module.exports.getall = function(req,res){
         //res.redirect("/crud");
     });
     res.redirect("/crud");
-}*/
-
+}
 };
-
+*/
