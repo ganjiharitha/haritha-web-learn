@@ -21,7 +21,15 @@ $(document).ready(function() {
         alert("no articules are selected");
         else
         {
-        
+            $.post("/api/course",
+                {
+                course : newTest.course,
+                id : newTest.id,
+                articles : newTest.articles
+                },
+                function(data,status){
+                console.log("data submitted");
+            });
             addRow(newTest);
             $(".selectdiv").css("visibility","hidden");
             $(".addingdiv").css("height","50px");
