@@ -3,9 +3,9 @@ module.exports.create = function(req,res){
     var a=new model({
         course : req.body.course,
         articles : req.body.articles,
-        id : req.body.id
+        id : string
     });
-    a.save();
+    //a.save();
     res.redirect("/crud");
 };
 
