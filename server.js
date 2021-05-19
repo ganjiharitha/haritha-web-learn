@@ -7,7 +7,7 @@ app.use(express.static(__dirname+"/frontend"));
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-require("./connectionmongo");
+var connection=require("./connectionmongo");
 app.get("/", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
     res.sendFile(homepage);
@@ -30,10 +30,6 @@ app.get('/api/course',function(req, res){
 app.post('/api/course',function(req,res){
      lib.create(req,res);
 })
-app.delete('/api/course/:id',function(req,res){
-    lib.deleteit(req.params.id,res);
-})
-
 
 app.get("/homepage", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
