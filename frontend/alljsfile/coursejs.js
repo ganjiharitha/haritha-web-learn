@@ -21,7 +21,7 @@ $(document).ready(function() {
         alert("no articules are selected");
         else
         {
-            $.post("/api/course",
+           /* $.post("/api/course",
                 {
                 course : newTest.course,
                 id : newTest.id,
@@ -29,7 +29,7 @@ $(document).ready(function() {
                 },
                 function(data,status){
                 console.log("data submitted");
-            });
+            });*/
             addRow(newTest);
             $(".selectdiv").css("visibility","hidden");
             $(".addingdiv").css("height","50px");
