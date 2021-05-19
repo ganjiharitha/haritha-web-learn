@@ -1,7 +1,13 @@
 const express = require('express');
  
 const app = express();
+const courselib = require('./backend/lib/itemlib');
+app.use("/api", require("./backend/api/courselib"));
 app.use(express.static(__dirname+"/frontend"));
+
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+require("./connectionmongo");
 app.get("/", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
     res.sendFile(homepage);
@@ -10,7 +16,21 @@ app.get("/google", function(req, res){
     gpage=__dirname+"/frontend/allhtmlfiles/googleen.html";
     res.sendFile(gpage);
 })
+app.get("/course", function(req, res){
+    gpage=__dirname+"/frontend/allhtmlfiles/coursebackend.html";
+    res.sendFile(gpage);
+})
+app.get('/api/users',function(req, res){
+    res.json(users);
+})
+app.post('/api/users',function(req,res){
+    var newuser = req.body;
+   // var t = JSON.stringify(newuser);
+    users.push(newuser);
+    res.json({users});
 
+
+})
 app.get("/homepage", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
     res.sendFile(homepage);

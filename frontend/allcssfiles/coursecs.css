@@ -1,0 +1,67 @@
+.addingdiv{
+    text-align : center;
+    height : 50px;
+}
+.selectdiv{
+    visibility: hidden;
+}
+.addbtn{
+    width : 150px;
+    height : 50px;
+    background-color : dodgerblue;
+    border : none;
+    font-family : Ariel;
+    cursor : pointer;
+    font-size : 20px;
+}
+.selector{
+    width : 50%;
+    height : 30px;
+    margin-top : 10px;
+    border: 2px solid pink;
+    border-radius: 12px;
+    outline: none !important;
+}
+.articul{
+    width : 50%;
+    height : 25px;
+    margin-top : 10px;
+    border: 2px solid pink;
+    border-radius: 12px;
+    outline: none !important;
+}
+.subbtn{
+    width : 100px;
+    height : 30px;
+    background-color : dodgerblue;
+    border : none;
+    font-family : Ariel;
+    cursor : pointer;
+    font-size : 20px;
+    margin-top : 10px;
+}
+.displayer{
+    width : 100%;
+    margin-top : 20px;
+}
+table{
+     border-collapse: collapse;
+     width : 50%;
+     margin-left : auto;
+     margin-right : auto;
+}
+thead th{
+    background-color : Aquamarine;
+    font-size : 25px;
+    font-family : Ariel;
+}
+tbody th{
+    border-bottom: 1px solid #ddd;
+    font-style : normal;
+    font-size : 20px;
+    font-weight : normal;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+tr:nth-child(even){background-color: #f2f2f2}
