@@ -10,8 +10,8 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 const mongoose = require('mongoose');
-var password=process.env.Mongo_atlas_password;
-var connectionString="mongodb+srv://haritha:"+password+"@cluster0.c6dlh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+//var password=process.env.Mongo_atlas_password;
+var connectionString="mongodb+srv://haritha:Gharitha@cluster0.c6dlh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(connectionString,{useNewUrlParser: true,useUnifiedTopology: true});
 
