@@ -1,8 +1,8 @@
 const express = require('express');
  
 const app = express();
-const courselib = require('./backend/lib/itemlib');
-app.use("/api", require("./backend/api/courselib"));
+const lib = require('./backend/lib/courselib');
+const model = require("./backend/models/coursemodel");
 app.use(express.static(__dirname+"/frontend"));
 
 app.use(express.urlencoded({extended:true}));
@@ -16,21 +16,25 @@ app.get("/google", function(req, res){
     gpage=__dirname+"/frontend/allhtmlfiles/googleen.html";
     res.sendFile(gpage);
 })
-app.get("/course", function(req, res){
+app.get("/crud", function(req, res){
     gpage=__dirname+"/frontend/allhtmlfiles/coursebackend.html";
     res.sendFile(gpage);
 })
-app.get('/api/users',function(req, res){
-    res.json(users);
-})
-app.post('/api/users',function(req,res){
-    var newuser = req.body;
-   // var t = JSON.stringify(newuser);
-    users.push(newuser);
-    res.json({users});
 
 
+
+
+app.get('/api/course',function(req, res){
+    lib.getall(req,res);
 })
+app.post('/api/course',function(req,res){
+     lib.create(req,res);
+})
+app.delete('/api/course/:id',function(req,res){
+    lib.deleteit(req.params.id,res);
+})
+
+
 app.get("/homepage", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
     res.sendFile(homepage);
