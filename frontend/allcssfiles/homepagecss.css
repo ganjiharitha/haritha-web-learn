@@ -60,7 +60,26 @@
     cursor : pointer;
 	position :absolute;
 	top : 800px;
+	left : 500px;
+	border : none;
+
+}
+.crudbut
+{
+    cursor : pointer;
+	position :absolute;
+	top : 800px;
 	left : 850px;
 	border : none;
 
 }
+.tambut
+{
+    cursor : pointer;
+	position :absolute;
+	top : 800px;
+	right : 500px;
+	border : none;
+
+}
+

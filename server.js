@@ -8,9 +8,6 @@ require("./connectionmongo");
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-const mongoose = require('mongoose');
-
-
 app.get("/", function(req, res){
     homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
     res.sendFile(homepage);
@@ -108,6 +105,10 @@ app.get("/todo", function(req, res){
    page=__dirname+"/frontend/allhtmlfiles/todo.html";
     res.sendFile(page);
 })
+app.get("/tambola", function(req, res){
+    page=__dirname+"/frontend/allhtmlfiles/tambola.html";
+     res.sendFile(page);
+ })
 // Heroku will automatically set an environment variable called PORT
 const PORT = process.env.PORT || 3000;
  

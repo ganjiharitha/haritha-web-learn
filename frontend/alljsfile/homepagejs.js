@@ -12,3 +12,9 @@ function applefunction() {
  function todofunction() {
     window.location.href ="https://haritha-web-learn.herokuapp.com/todo";
    }
+   function crudfunction() {
+      window.location.href ="https://haritha-web-learn.herokuapp.com/crud";
+     }
+     function tambfunction() {
+      window.location.href ="https://haritha-web-learn.herokuapp.com/tambola";
+     }
