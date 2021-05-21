@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+const confedencial = require("./backend/config/config");
 
-const pass = process.env.Mongoose_atlas_password;
-const login =  process.env.Mongoose_atlas_login;
+
+const pass = confedencial.mongopass;
+const login =confedencial.mongologin;
 var connectionString="mongodb+srv://"+login+":"+pass+"@cluster0.c6dlh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(connectionString,{useNewUrlParser: true,useUnifiedTopology: true,useFindAndModify: false});
