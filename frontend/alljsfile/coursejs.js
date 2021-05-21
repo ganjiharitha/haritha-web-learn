@@ -65,11 +65,12 @@ $(document).ready(function() {
         var value = $(this).html()
 
         $(this).unbind()
-        $(this).html(`<input id ="${testid}" class="result form-control" data-testid="${testid}" type="text" value="${value}">`)
+        $(this).html(`<input class="result form-control" data-testid="${testid}" type="text" value="${value}">`)
         $(`.result`).on('keyup', function () {
                 var testid = $(this).data('testid')
                 var saveBtn = $(`#save-${testid}`)
                 saveBtn.prop('disabled', false)
+                data = { articles: JSON.parse($(".result").val())};
         })
 
 
@@ -77,9 +78,7 @@ $(document).ready(function() {
 
     function saveUpdate() {
         var testid = $(this).data('testid')
-        var resdata= $(`#result-${testid}`)
-        var d= $('#resdata').val();
-        console.log(d);
+
 
         $.ajax({
         url: '/crud/put/'+testid,
@@ -87,10 +86,10 @@ $(document).ready(function() {
         method : 'PUT',
          data: data,
         success: function (data) {
-
+            data = JSON.parse(data);
             },
             error: function (xhr, status, error) {
-
+                alert(error);
             }
     });
 

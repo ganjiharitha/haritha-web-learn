@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
-
-const table = require("./backend/models/coursemodel");
+const courselib = require('./backend/lib/courselib');
 app.use(express.static(__dirname+"/frontend"));
 require("./connectionmongo");
 
@@ -23,57 +22,10 @@ app.get("/crud", function(req, res){
     gpage=__dirname+"/frontend/allhtmlfiles/coursebackend.html";
     res.sendFile(gpage);
 })
-app.get('/crud/get',function(req, res){
-     table.find()
-    .then((result) =>{
-        res.send(result);
-        console.log(result);
-    })
-    .catch((err) => {
-        console.log(err);
-    })
-
-  //  lib.getall(req,res);
-})
-app.post('/crud/post',function(req,res){
-     var newUser= req.body;
-    const newTable = new table({
-        names : newUser.names,
-        articles : newUser.articles,
-        id : newUser.id
-    })
-    console.log(newTable);
-    newTable.save();
-
-     //lib.create(req,res);
-})
-app.delete('/crud/del/:id', function(req, res){
-    var i=req.params.id
-    table.findByIdAndDelete(i, (err)=>{
-        if(err){
-            console.log('Error:'+err);
-        }
-        else{
-            console.log('Success');
-        }
-    })
-})
-
-app.put('/crud/put/:id', function(req, res){
-    var i=req.params.id
-    table.findById(i, function (err,Obj) {
-        if(err){
-            console.log('Error:' + err);
-        }
-        else{
-            table.findByIdAndUpdate(i, {articles: req.body.articles}, function(){})
-        };
-    });
-
-req.body.Articles = parseInt( req.body.Articles );
-
-
-})
+app.get('/crud/get',courselib.getall);
+app.post('/crud/post',courselib.addnew);
+app.delete('/crud/del/:id',courselib.deleteit);
+app.put('/crud/put/:id', courselib.update);
 
 
 
