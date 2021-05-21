@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const pass = process.env.Mongoose_atlas_password;
-var connectionString="mongodb+srv://haritha:"+pass+"@cluster0.c6dlh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const login =  process.env.Mongoose_atlas_login;
+var connectionString="mongodb+srv://"+login+":"+pass+"@cluster0.c6dlh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(connectionString,{useNewUrlParser: true,useUnifiedTopology: true,useFindAndModify: false});
 
