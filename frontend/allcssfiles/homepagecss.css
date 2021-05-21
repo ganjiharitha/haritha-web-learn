@@ -1,85 +1,96 @@
-.homepic
-{
-    float: top;
-    padding: 0px;
+.totalsec{
+	width :100%;
+	height : auto;
+	margin: 0;
+    padding : 0;
+    overflow :hidden;
+	text-align : center;
+}
+.headsec{
+	width: 100%;
+	height : auto;
+	margin: 0;
+    padding : 0;
+    overflow :hidden;
+}
+.homepic{
     width : 100%;
-    height : 400px;
+    height : 250px;
 
+}
+.iconsec{
+	width: 100%;
+	height : auto;
+	text-align : center;
+	margin: 0;
+    padding : 0;
+    overflow :hidden;
+}
+
+.headingdiv{
+	width: 100%;
+	height : auto;
+	margin: 0;
+    padding : 0;
+    overflow :hidden;
+	text-align : center;
 }
 .headername{
     color : #001a66;
 	font-size : 80px;
-	position :absolute;
-	top : 350px;
-	left : 350px;
+	margin: 0;
+    padding : 0;
+    overflow :hidden;
+
+}
+.icondiv{
+	width: 100%;
+	height : auto;
+	margin-top : 40px;
+    padding : 0;
+    overflow :hidden;
+}
+.pic
+{
+	width: 200px;
+	height: 200px;
 }
 .resumebutton
 {
     cursor  : pointer;
-	position :absolute;
-	top : 550px;
-	left : 500px;
 	border :  none;
-
+	margin-right : 40px;
 }
 .applebutton
 {
     cursor : pointer;
-	position :absolute;
-	top : 550px;
-	left : 850px;
 	border : none;
+	margin-right : 40px;
 
-}
-.resumepiccss
-{
-	width: 200px;
-	height: 200px;
-}
-.applepic{
-
-	width: 200px;
-	height: 200px;
-}
-.rgbpic{
-
-	width: 200px;
-	height: 200px;
 }
 .rgbbutton
 {
     cursor : pointer;
-	position :absolute;
-	top : 550px;
-	right : 500px;
 	border : none;
 
 }
-.todo
+.todobut
 {
     cursor : pointer;
-	position :absolute;
-	top : 800px;
-	left : 500px;
 	border : none;
+	margin-right : 40px;
 
 }
 .crudbut
 {
     cursor : pointer;
-	position :absolute;
-	top : 800px;
-	left : 850px;
 	border : none;
+	margin-right : 40px;
 
 }
 .tambut
 {
     cursor : pointer;
-	position :absolute;
-	top : 800px;
-	right : 500px;
 	border : none;
 
 }
-
