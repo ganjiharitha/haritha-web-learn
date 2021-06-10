@@ -3,7 +3,7 @@ $(document).ready(function() {
     var newTest = { 'names' : "", "id" : newId, 'articles' : ""};
 
 
-    $.get("/crud/get",function(data,status){
+    $.get("/api/crud/get",function(data,status){
     var tests=data;
     for (var i in tests) {
         addRow(tests[i]);
@@ -28,7 +28,7 @@ $(document).ready(function() {
             $(".selectdiv").css("visibility","hidden");
             $(".addingdiv").css("height","50px");
 
-           $.post("/crud/post",
+           $.post("/api/crud/post",
                 {
                 names : newTest.names,
                 articles : newTest.articles,
@@ -81,7 +81,7 @@ $(document).ready(function() {
 
 
         $.ajax({
-        url: '/crud/put/'+testid,
+        url: '/api/crud/put/'+testid,
         type: 'PUT',
         method : 'PUT',
          data: data,
@@ -111,7 +111,7 @@ $(document).ready(function() {
         console.log(testid)
         console.log(row)
         $.ajax({
-        url: '/crud/del/'+testid,
+        url: '/api/crud/del/'+testid,
         type: 'DELETE',
         method : 'DELETE',
         dataType: 'json'

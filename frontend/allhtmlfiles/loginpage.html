@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="google-signin-client_id" content="1072993861316-cn5k5k47v1lp7a5df3pfg16c09tpsv4f.apps.googleusercontent.com">
     <title>Loginpage</title>
     <link rel="stylesheet" href="/allcssfiles/logincs.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://apis.google.com/js/platform.js" async defer></script>
+   <script src="/alljsfile/loginjs.js"></script>
 </head>
 <body>
     <div class="wholepage">
@@ -15,7 +18,6 @@
                 <h1>Login</h1>
             </div>
             <div class="inputsec">
-                <form action="https://haritha-web-learn.herokuapp.com/">
                 <label class="titlecl">Username:</label><br><br>
                 <div class="userdiv">
                     <i class="fa fa-user uicon" aria-hidden="true"></i>
@@ -28,16 +30,16 @@
                 </div>
                     <br>
 
-            <div class="fpass">
+                <div class="fpass">
                 <a class ="fpassa" href="#" target="_blank">forgot password?</a>
-            </div>
+                </div>
                     <br>
-                        <button class="submit"  >Login</button>
-                    </form>
-             </div>
+                <button class="submit"  >Login</button><br><br>
+                <button class="googlebtn"><i class="fa fa-google fa-fw"></i> Login with Google+</button>
 
             <h2 class="ormar">or</h2>
             <a class="rega" href="https://haritha-web-learn.herokuapp.com/register">Register</a>
+            
         </div>
     </div>
 

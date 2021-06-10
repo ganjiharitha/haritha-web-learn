@@ -1,6 +1,6 @@
 
 .wholepage{
-    background-image : url("/allpics/loginback.jpg");
+    background-image : url("/allpics/loginback.jfif");
     background-repeat : no-repeat;
     background-size : cover;
     background-position : center;
@@ -10,22 +10,21 @@
 }
 .loginbox{
     background-color : white;
-    width: 400px;
-    height : 500px;
-    margin-left : 750px;
+    width: 30%;
+    height : auto;
+    margin-left : 40%;
     margin-top : 200px;
      border-radius: 25px;
   border: 2px ;
 }
 .loghead{
-    padding : 40px 150px;
+    padding : 30px 40%;
     font-family : Arial;
     height : 40px;
     width : 100%;
 }
 .inputsec{
     width : 100%;
-    hight : 100px;
 }
 .titlecl{
     font-size : 20px;
@@ -61,22 +60,32 @@ padding: 10px;
 }
 .submit{
     background-color : dodgerblue;
-    width : 200px;
+    width : 50%;
     height: 35px;
     cursor : pointer;
     font-size : 20px;
     border : none;
     color : white;
-    margin-left : 90px;
+    margin-left : 25%;
+}
+.googlebtn{
+    width : 50%;
+    height: 35px;
+    margin-left : 25%;
+    background-color: rgb(226, 28, 28);
+    cursor : pointer;
+    border : none;
+    color : white;
+
 }
 .ormar{
-     margin-left : 180px;
+     margin-left : 50%;
 }
 .rega{
 
     text-decoration : none;
     cursor : pointer;
     color : dodgerblue;
-    margin-left : 150px;
+    margin-left : 45%;
     font-size : 25px;
 }

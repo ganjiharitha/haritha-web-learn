@@ -1,66 +1,20 @@
 const express = require('express');
 const app = express();
-const courselib = require('./backend/lib/courselib');
+
+const apirouters = require('./backend/routers/apiroutes');
+const webrouters = require('./backend/routers/webroutes');
+
 app.use(express.static(__dirname+"/frontend"));
 require("./connectionmongo");
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-app.get("/", function(req, res){
-    homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
-    res.sendFile(homepage);
-})
-app.get("/google", function(req, res){
-    gpage=__dirname+"/frontend/allhtmlfiles/googleen.html";
-    res.sendFile(gpage);
-})
+
+app.use('/api',apirouters);
+app.use(webrouters);
 
 
-
-app.get("/crud", function(req, res){
-    gpage=__dirname+"/frontend/allhtmlfiles/coursebackend.html";
-    res.sendFile(gpage);
-})
-app.get('/crud/get',courselib.getall);
-app.post('/crud/post',courselib.addnew);
-app.delete('/crud/del/:id',courselib.deleteit);
-app.put('/crud/put/:id', courselib.update);
-
-
-
-app.get("/homepage", function(req, res){
-    homepage=__dirname+"/frontend/allhtmlfiles/homep.html";
-    res.sendFile(homepage);
-})
-app.get("/resume", function(req, res){
-    file=__dirname+"/frontend/allhtmlfiles/resume.html";
-    res.sendFile(file);
-})
-app.get("/apple", function(req, res){
-    applel=__dirname+"/frontend/allhtmlfiles/apple.html";
-    res.sendFile(applel);
-})
-app.get("/rgb", function(req, res){
-    rgbpage=__dirname+"/frontend/allhtmlfiles/rgb.html";
-    res.sendFile(rgbpage);
-})
-app.get("/login", function(req, res){
-    applel=__dirname+"/frontend/allhtmlfiles/loginpage.html";
-    res.sendFile(applel);
-})
-app.get("/register", function(req, res){
-    rgbpage=__dirname+"/frontend/allhtmlfiles/registerpage.html";
-    res.sendFile(rgbpage);
-})
-app.get("/todo", function(req, res){
-   page=__dirname+"/frontend/allhtmlfiles/todo.html";
-    res.sendFile(page);
-})
-app.get("/tambola", function(req, res){
-    page=__dirname+"/frontend/allhtmlfiles/tambola.html";
-     res.sendFile(page);
- })
 // Heroku will automatically set an environment variable called PORT
 const PORT = process.env.PORT || 3000;
  
