@@ -16,7 +16,7 @@ $(document).ready(function() {
         a.push(data);
         localStorage.setItem("loged_not",JSON.stringify(a));
         console.log(a);
-        //window.location.href ="https://haritha-web-learn.herokuapp.com/";
+        window.location.href ="https://haritha-web-learn.herokuapp.com/";
       }
       else{
         alert(data.message);
