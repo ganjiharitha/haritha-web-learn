@@ -79,13 +79,17 @@ padding: 10px;
 
 }
 .ormar{
-     margin-left : 50%;
+     text-align : center;
+     margin-bottom: 0px;
+     margin-top: 3px;
 }
 .rega{
-
-    text-decoration : none;
+    background-color : dodgerblue;
+    width : 50%;
+    height: 35px;
     cursor : pointer;
-    color : dodgerblue;
-    margin-left : 45%;
-    font-size : 25px;
+    font-size : 20px;
+    border : none;
+    color : white;
+    margin-left : 25%;
 }

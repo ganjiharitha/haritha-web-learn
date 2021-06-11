@@ -1,20 +1,73 @@
-function resumefunction() {
-    console.log("resumeloading");
-  //  window.location.replace("https://haritha-web-learn.herokuapp.com/resume");
-window.location.href = "https://haritha-web-learn.herokuapp.com/resume";
+$(document).ready(function() {
+   var a=[];
+  window.onload=function(){
+  if(JSON.parse(localStorage.getItem("loged_not"))!=null)
+    a=JSON.parse(localStorage.getItem("loged_not"));
+    console.log(a);
+    if(a.length>0){
+      $('#homeregb').hide();
+      $('#homelogb').hide();
+      $('#signout').show();
+      $('#weltag').html("Welcome "+a[0].user);
+       console.log(a[0].user);
    }
-function applefunction() {
-   window.location.href ="https://haritha-web-learn.herokuapp.com/apple";
+   else{
+      $('#homeregb').show();
+      $('#homelogb').show();
+      $('#signout').hide();
+      $('#weltag').html("Welcome User");
    }
-   function rgbfunction() {
-    window.location.href ="https://haritha-web-learn.herokuapp.com/rgb";
-   }
- function todofunction() {
-    window.location.href ="https://haritha-web-learn.herokuapp.com/todo";
-   }
-   function crudfunction() {
-      window.location.href ="https://haritha-web-learn.herokuapp.com/crud";
-     }
-     function tambfunction() {
-      window.location.href ="https://haritha-web-learn.herokuapp.com/tambola";
-     }
+  }
+  $("#signout").click(function(){
+     localStorage.clear();
+     location.reload();
+  })
+  $("#homeregb").click(function(){
+   window.location.replace("https://haritha-web-learn.herokuapp.com/register");
+  })
+  $("#homelogb").click(function(){
+   window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+  })
+  $("#resumeb").click(function(){
+     if(a.length>0)
+      window.location.replace("https://haritha-web-learn.herokuapp.com/resume");
+      else
+      window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+  })
+  $("#appleb").click(function(){
+   if(a.length>0)
+   window.location.replace("https://haritha-web-learn.herokuapp.com/apple");
+   else
+   window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+
+  })
+  $("#rgbb").click(function(){
+   if(a.length>0)
+   window.location.replace("https://haritha-web-learn.herokuapp.com/rgb");
+   else
+   window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+     
+})
+$("#todob").click(function(){
+   if(a.length>0)
+      window.location.replace("https://haritha-web-learn.herokuapp.com/todo");
+      else
+      window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+     
+})
+$("#crudb").click(function(){
+   if(a.length>0)
+      window.location.replace("https://haritha-web-learn.herokuapp.com/crub");
+      else
+      window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+     
+})
+$("#tambolab").click(function(){
+   if(a.length>0)
+      window.location.replace("https://haritha-web-learn.herokuapp.com/tambola");
+      else
+      window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+     
+   })
+
+});

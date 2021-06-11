@@ -11,18 +11,35 @@ $(document).ready(function() {
     if(newTest.password == repass){
       if(repass.match(passw))
       {
-        $.post("/api/reg/post",
-        {
-          name : newTest.name,
-          email : newTest.email,
-          phonenumber : newTest.phonenumber,
-          password : newTest.password
+        $.post("/api/reg/post",newTest)
+        .done(function(data){
+          if(data.success){
+            $('#uname').val('');
+            $('#ename').val('');
+            $('#pnum').val('');
+            $('#upass').val('');
+            $('#upassre').val('');
+            alert("pelase kindly login to your account");
+            window.location.href ="https://haritha-web-learn.herokuapp.com/login";
+          }
+          if(data.emailexist==true && data.nameexist==true)
+          {
+            alert("username and email is already existed");
+            $('#uname').val('');
+            $('#ename').val('');
+          }
+         else if(data.emailexist)
+          {
+            alert("email is existed. Try another Email or Login to your account");
+            $('#ename').val('');
+          }
+          else
+          {
+            alert("username is already existed. Try another name");
+            $('#uname').val('');
+          }
         })
-        $('#uname').val('');
-        $('#ename').val('');
-        $('#pnum').val('');
-        $('#upass').val('');
-        $('#upassre').val('');
+        
       }
       else{
         $('#upass').val('');
