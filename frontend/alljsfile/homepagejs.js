@@ -23,50 +23,50 @@ $(document).ready(function() {
      location.reload();
   })
   $("#homeregb").click(function(){
-   window.location.replace("https://haritha-web-learn.herokuapp.com/register");
+   window.location="https://haritha-web-learn.herokuapp.com/register";
   })
   $("#homelogb").click(function(){
-   window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+   window.location="https://haritha-web-learn.herokuapp.com/login";
   })
   $("#resumeb").click(function(){
      if(a.length>0)
-      window.location.replace("https://haritha-web-learn.herokuapp.com/resume");
+      window.location="https://haritha-web-learn.herokuapp.com/resume";
       else
-      window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+      window.location="https://haritha-web-learn.herokuapp.com/login";
   })
   $("#appleb").click(function(){
    if(a.length>0)
-   window.location.replace("https://haritha-web-learn.herokuapp.com/apple");
+   window.location="https://haritha-web-learn.herokuapp.com/apple";
    else
-   window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+   window.location="https://haritha-web-learn.herokuapp.com/login";
 
   })
   $("#rgbb").click(function(){
    if(a.length>0)
-   window.location.replace("https://haritha-web-learn.herokuapp.com/rgb");
+   window.location="https://haritha-web-learn.herokuapp.com/rgb";
    else
-   window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+   window.location="https://haritha-web-learn.herokuapp.com/login";
      
 })
 $("#todob").click(function(){
    if(a.length>0)
-      window.location.replace("https://haritha-web-learn.herokuapp.com/todo");
+      window.location="https://haritha-web-learn.herokuapp.com/todo";
       else
-      window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+      window.location="https://haritha-web-learn.herokuapp.com/login";
      
 })
 $("#crudb").click(function(){
    if(a.length>0)
-      window.location.replace("https://haritha-web-learn.herokuapp.com/crub");
+      window.locatio="https://haritha-web-learn.herokuapp.com/crub";
       else
-      window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+      window.location="https://haritha-web-learn.herokuapp.com/login";
      
 })
 $("#tambolab").click(function(){
    if(a.length>0)
-      window.location.replace("https://haritha-web-learn.herokuapp.com/tambola");
+      window.location="https://haritha-web-learn.herokuapp.com/tambola";
       else
-      window.location.replace("https://haritha-web-learn.herokuapp.com/login");
+      window.location="https://haritha-web-learn.herokuapp.com/login";
      
    })
 
