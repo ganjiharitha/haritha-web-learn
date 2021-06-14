@@ -19,6 +19,8 @@ $(document).ready(function() {
    }
   }
   $("#signout").click(function(){
+     if(a.glog)
+      window.reload();
      localStorage.clear();
      location.reload();
   })
@@ -57,7 +59,7 @@ $("#todob").click(function(){
 })
 $("#crudb").click(function(){
    if(a.length>0)
-      window.locatio="https://haritha-web-learn.herokuapp.com/crub";
+      window.location="https://haritha-web-learn.herokuapp.com/crub";
       else
       window.location="https://haritha-web-learn.herokuapp.com/login";
      
@@ -71,3 +73,6 @@ $("#tambolab").click(function(){
    })
 
 });
+window.onbeforeunload = function(e){
+   gapi.auth2.getAuthInstance().signOut();
+ };

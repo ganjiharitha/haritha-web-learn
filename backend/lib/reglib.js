@@ -58,7 +58,7 @@ module.exports.addnew = function(req,res)
                     feed.success=true;
                 }*/
 module.exports.containornot = function(req,res){
-    var feedb = {success: false, message: "", user: "" }
+    var feedb = {success: false, message: "", user: "",glog:false }
     table.findOne({email : req.body.email} , function(err,foundit){
         if(err)
             console.log("error : "+err);
