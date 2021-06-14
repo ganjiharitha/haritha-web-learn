@@ -54,7 +54,9 @@ $(document).ready(function() {
       $('#upassre').val('');
     }
   })
-
+  $("#loginrega").click(function(){
+    window.location ="https://haritha-web-learn.herokuapp.com/register"
+  })
 
 })
 

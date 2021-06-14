@@ -25,6 +25,9 @@ $(document).ready(function() {
       }
     })
   })
+  $("#rega").click(function(){
+    window.location ="https://haritha-web-learn.herokuapp.com/register"
+  })
 })
 window.onbeforeunload = function(e){
   gapi.auth2.getAuthInstance().signOut();
